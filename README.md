@@ -24,26 +24,33 @@ The sources also compare CouchDB to MongoDB. CouchDB uses the JSON data format, 
 ### The sources also provide instructions on how to install CouchDB and interact with it using cURL.
 ## Using CouchDB with cURL
 ###### Once CouchDB is installed, you can use cURL to interact with it. Here are some common cURL commands for CouchDB:
+
 ### To list all databases, use this command:
 ###### curl -X GET http://user:secret@127.0.0.1:5984/_all_dbs
+
 ### To create a database, use this command:
 ###### curl -X PUT http://user:secret@127.0.0.1:5984/DBname
+
 ### To retrieve documents from a database, use this command:
 ###### curl -X GET http://user:secret@127.0.0.1:5984/DBname
+
 ### To retrieve data from a document, use this command:
 ###### curl -X GET http://user:secret@127.0.0.1:5984/DBname/_design/design_doc_name/_view/index_name
+
 ### To create a document and set data, follow these steps:
-### First, generate new_doc_id with this command:
+#### First, generate new_doc_id with this command:
 ###### curl -X POST http://user:secret@127.0.0.1:5984/DBname -d "{\"key\":\"value\"}"
-### Then, use this new_doc_id as doc_id in the following command:
+#### Then, use this new_doc_id as doc_id in the following command:
 ###### curl -X PUT http://user:secret@127.0.0.1:5984/DBname/doc_id -d "{\"key1\":\"value1\",\"key2\":\"value2\"}"
+
 ### To update document data, use this command:
 ###### curl -X PUT http://user:secret@127.0.0.1:5984/DBname/doc_id -d "{\"key1\":\"value1\",\"key2\":\"value2\", \"_rev\":\"doc_rev\"}"
+
 ### To delete document data, use this command:
 ###### curl -X DELETE http://user:secret@127.0.0.1:5984/DBname/doc_id?rev=doc_rev
-### To import data from a document, follow these steps:
 
-### First, generate new_doc_id with this command:
+### To import data from a document, follow these steps:
+#### First, generate new_doc_id with this command:
 ###### curl -X POST http://user:secret@127.0.0.1:5984/DBname -d "{\"key\":\"value\"}"
-### Then, use this new_doc_id as doc_id in the following command:
-###### curl -X PUT http://user:secret@127.0.0.1:5984/DBname/doc_id -d "{\"key1\":\"value1\
+#### Then, use this new_doc_id as doc_id in the following command:
+###### curl -X PUT http://user:secret@127.0.0.1:5984/DBname/doc_id -d "{\"key1\":\"value1\",\"key2\":\"value2\"}" 
