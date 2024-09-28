@@ -21,4 +21,29 @@ The sources list the advantages and disadvantages of CouchDB.
 
 The sources also compare CouchDB to MongoDB. CouchDB uses the JSON data format, while MongoDB uses BSON, JSON, and CSV formats. CouchDB does not support SQL query language, while MongoDB supports read-only SQL queries via the MongoDB connector for BI. CouchDB does not support in-memory capabilities, whereas MongoDB does. In CouchDB, the database contains documents, while in MongoDB, the database contains collections. CouchDB does not have predefined data types, whereas MongoDB has predefined data types such as boolean, string, number, etc. CouchDB supports the following operating systems: Android, BSD, Linux, OS X, and Windows. MongoDB supports the following operating systems: Linux, OS X, and Windows.
 
-The sources also provide instructions on how to install CouchDB and interact with it using cURL.
+### The sources also provide instructions on how to install CouchDB and interact with it using cURL.
+## Using CouchDB with cURL
+###### Once CouchDB is installed, you can use cURL to interact with it. Here are some common cURL commands for CouchDB:
+### To list all databases, use this command:
+###### curl -X GET http://user:secret@127.0.0.1:5984/_all_dbs
+### To create a database, use this command:
+###### curl -X PUT http://user:secret@127.0.0.1:5984/DBname
+### To retrieve documents from a database, use this command:
+###### curl -X GET http://user:secret@127.0.0.1:5984/DBname
+### To retrieve data from a document, use this command:
+###### curl -X GET http://user:secret@127.0.0.1:5984/DBname/_design/design_doc_name/_view/index_name
+### To create a document and set data, follow these steps:
+### First, generate new_doc_id with this command:
+###### curl -X POST http://user:secret@127.0.0.1:5984/DBname -d "{\"key\":\"value\"}"
+### Then, use this new_doc_id as doc_id in the following command:
+###### curl -X PUT http://user:secret@127.0.0.1:5984/DBname/doc_id -d "{\"key1\":\"value1\",\"key2\":\"value2\"}"
+### To update document data, use this command:
+###### curl -X PUT http://user:secret@127.0.0.1:5984/DBname/doc_id -d "{\"key1\":\"value1\",\"key2\":\"value2\", \"_rev\":\"doc_rev\"}"
+### To delete document data, use this command:
+###### curl -X DELETE http://user:secret@127.0.0.1:5984/DBname/doc_id?rev=doc_rev
+### To import data from a document, follow these steps:
+
+### First, generate new_doc_id with this command:
+###### curl -X POST http://user:secret@127.0.0.1:5984/DBname -d "{\"key\":\"value\"}"
+### Then, use this new_doc_id as doc_id in the following command:
+###### curl -X PUT http://user:secret@127.0.0.1:5984/DBname/doc_id -d "{\"key1\":\"value1\
