@@ -1,0 +1,25 @@
+{
+  "name": "mini-blog",
+  "version": "1.0.0",
+  "description": "A simple blog application using CouchDB as NoSQL database and EJS for templating",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ben Yahia Moutia",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "bootstrap": "^5.2.2",
+    "bootstrap-icons": "^1.9.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "jquery": "^3.6.1",
+    "mini-blog": "file:",
+    "node-couchdb": "^2.0.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
