@@ -1,4 +1,5 @@
-### This Blog is just a mini Blog for try the SGBD NoSQL CouchDB
+### This blog is a mini blog created to experiment with the NoSQL database CouchDB.
+
 # CouchDB :
 The sources provide information on the configuration of Apache CouchDB, a document-oriented database management system written in Erlang. CouchDB is designed for the web, is part of the NoSQL movement, and can be distributed across a cluster of servers. Data is stored in JSON documents that can be accessed and queried using HTTP.
 
